@@ -14,8 +14,8 @@ export const config = {
     SITE_DESCRIPTION: 'A location-first platform that connects volunteers, NGOs and local communities with verified impact.',
 
     // Contact & Social Links
-    CONTACT_EMAIL: 'contact@daanveer.app',
-    GITHUB_URL: 'https://github.com/daanveer',
+    CONTACT_EMAIL: 'daanveer.co.tc@gmail.com',
+    GITHUB_URL: 'https://github.com/danveer-co',
     PRIVACY_POLICY_URL: '/privacy',
 
     // Session Storage Keys
