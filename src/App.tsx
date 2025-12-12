@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Splash, VideoSplash } from './components';
 import { Landing } from './pages/Landing';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { config } from './config';
 
 // Session storage keys
 const VIDEO_SHOWN_KEY = 'daanveer_video_shown';
 
 /**
- * Main App Component
+ * Main App Content Component
  * 
- * Handles video splash → splash screen → landing page flow.
- * Uses sessionStorage to skip video and splash on repeat visits.
+ * Handles splash screens and routing.
  */
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   const [showVideo, setShowVideo] = useState(true);
   const [showSplash, setShowSplash] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -25,7 +28,6 @@ function App() {
     
     if (videoShown === 'true') {
       setShowVideo(false);
-      // If video was shown, check if splash was also shown
       if (splashShown === 'true') {
         setShowSplash(false);
       } else {
@@ -52,26 +54,45 @@ function App() {
     return null;
   }
 
+  // Show splash screens only on home page
+  const showSplashScreens = isHomePage && (showVideo || showSplash);
+
   return (
-    <Router>
-      {/* Video Splash (first thing shown) */}
-      {showVideo && (
+    <>
+      {/* Video Splash (first thing shown, only on home) */}
+      {isHomePage && showVideo && (
         <VideoSplash onComplete={handleVideoComplete} />
       )}
 
-      {/* Animated Splash Screen (after video) */}
-      {!showVideo && showSplash && (
+      {/* Animated Splash Screen (after video, only on home) */}
+      {isHomePage && !showVideo && showSplash && (
         <Splash onComplete={handleSplashComplete} />
       )}
 
-      {/* Landing Page (always rendered, becomes visible after splashes) */}
+      {/* Main Content */}
       <div
         className={`transition-opacity duration-500 ${
-          showVideo || showSplash ? 'opacity-0' : 'opacity-100'
+          showSplashScreens ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <Landing />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+        </Routes>
       </div>
+    </>
+  );
+}
+
+/**
+ * Main App Component
+ * 
+ * Wraps content with Router.
+ */
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

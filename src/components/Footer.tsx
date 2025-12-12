@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { config } from '../config';
-import LogoPlaceholder from '../assets/logo-placeholder.svg';
+import DaanveerLogo from '../../media/daanveer_logo.png';
 
 /**
  * Footer Component
@@ -17,7 +18,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src={LogoPlaceholder} 
+                src={DaanveerLogo} 
                 alt="Daanveer Logo" 
                 className="w-10 h-10"
               />
@@ -61,9 +62,9 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href={config.PRIVACY_POLICY_URL} className="text-gray-400 hover:text-daanveer-green transition-colors">
+                <Link to="/privacy" className="text-gray-400 hover:text-daanveer-green transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

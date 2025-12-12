@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LogoPlaceholder from '../assets/logo-placeholder.svg';
+import DaanveerLogo from '../../media/daanveer_logo.png';
 
 interface NavItem {
   label: string;
@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
             aria-label="Daanveer Home"
           >
             <img 
-              src={LogoPlaceholder} 
+              src={DaanveerLogo} 
               alt="Daanveer Logo" 
               className="w-10 h-10 transition-transform duration-300 group-hover:scale-110"
             />
