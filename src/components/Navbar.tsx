@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { config } from '../config';
 import DaanveerLogo from '../../media/daanveer_logo.png';
 
 interface NavItem {
@@ -82,7 +83,8 @@ export const Navbar: React.FC = () => {
             
             {/* CTA Button */}
             <a
-              href="#download"
+              href={config.APK_DOWNLOAD_URL}
+              download
               className="btn-primary text-sm py-2 px-4"
               aria-label="Download Daanveer APK"
             >
