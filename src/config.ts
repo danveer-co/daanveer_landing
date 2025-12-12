@@ -6,7 +6,7 @@
 
 export const config = {
     // APK Download URL - Replace with actual APK location
-    APK_DOWNLOAD_URL: '/downloads/daanveer.apk',
+    APK_DOWNLOAD_URL: '/downloads/daanveer_app.apk',
 
     // Site metadata
     SITE_NAME: 'Daanveer',
