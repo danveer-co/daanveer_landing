@@ -9,23 +9,28 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     image: '/carousel/slide1.png',
-    title: 'Community Food Drives',
-    description: 'Join volunteers making a difference at local food banks and distribution centers.',
+    title: 'Food Donations',
+    description: 'Help feed families in need by donating groceries, cooked meals, or organizing food drives in your community.',
   },
   {
     image: '/carousel/slide2.png',
-    title: 'Education Outreach',
-    description: 'Help teach and mentor children through engaging community programs.',
+    title: 'Clothes & Essentials',
+    description: 'Donate clothes, blankets, and personal items to those who need them most. Every contribution matters.',
   },
   {
     image: '/carousel/slide3.png',
-    title: 'Environmental Action',
-    description: 'Plant trees and restore green spaces in your neighborhood.',
+    title: 'Connect with Local NGOs',
+    description: 'Visit and partner with verified NGOs in your area. See their work firsthand and find ways to contribute.',
   },
   {
     image: '/carousel/slide4.png',
-    title: 'Elder Care Support',
-    description: 'Bring joy and companionship to seniors in your community.',
+    title: 'Volunteer Your Time',
+    description: 'Join hands with communities — serve meals, teach children, assist the elderly, or support events.',
+  },
+  {
+    image: '/carousel/slide5.png',
+    title: 'Platform for NGOs',
+    description: 'Empowering NGOs with tools to manage volunteers, track impact, and reach more supporters efficiently.',
   },
 ];
 
