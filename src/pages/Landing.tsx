@@ -1,6 +1,7 @@
 import {
   Navbar,
   Hero,
+  ImageCarousel,
   FeaturesGrid,
   HowItWorks,
   Impact,
@@ -24,6 +25,9 @@ export const Landing: React.FC = () => {
         {/* Hero Section */}
         <Hero />
 
+        {/* Image Carousel */}
+        <ImageCarousel />
+
         {/* Features Grid */}
         <FeaturesGrid />
 
@@ -44,3 +48,4 @@ export const Landing: React.FC = () => {
 };
 
 export default Landing;
+

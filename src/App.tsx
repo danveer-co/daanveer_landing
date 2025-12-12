@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Splash, VideoSplash } from './components';
 import { Landing } from './pages/Landing';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { FeatureDetail } from './pages/FeatureDetail';
 import { config } from './config';
 
 // Session storage keys
@@ -78,6 +79,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/features/:featureId" element={<FeatureDetail />} />
         </Routes>
       </div>
     </>
